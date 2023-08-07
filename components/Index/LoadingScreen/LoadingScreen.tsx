@@ -6,7 +6,7 @@ import weeding_logo from "../../../assets/images/weeding-logo.png";
 
 const LoadingScreen = () => {
   return (
-    <div className="fixed w-full h-full">
+    <div className="fixed w-full h-full z-10">
       <div
         className={`absolute inline-block left-0 w-[50%] h-[100vh] bg-green-300 ${styles.panel}`}
       ></div>

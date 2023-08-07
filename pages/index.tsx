@@ -12,7 +12,13 @@ export default function Home() {
 
       <LoadingScreen />
 
-      <main></main>
+      <main>
+        <div className="w-44 h-44">
+          <video controls width={"250"} preload="" src="../assets/wedding.mp4">
+            <source src="" />
+          </video>
+        </div>
+      </main>
 
       <footer></footer>
     </div>
