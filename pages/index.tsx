@@ -13,11 +13,10 @@ export default function Home() {
       <LoadingScreen />
 
       <main>
-        <div className="w-44 h-44">
-          <video controls width={"250"} preload="" src="../assets/wedding.mp4">
-            <source src="" />
-          </video>
-        </div>
+        <video width="1920" height="1080" autoPlay muted loop preload="auto">
+          <source src="assets/wedding.mp4" type="video/mp4" />
+          Video not supported
+        </video>
       </main>
 
       <footer></footer>

@@ -3,6 +3,7 @@
   transition: all ease-out;
   animation-duration: 2200ms;
   animation-delay: 600ms;
+  animation-fill-mode: forwards;
 }
 
 .logo {
@@ -10,6 +11,7 @@
   transition: all ease-out;
   animation-duration: 2200ms;
   animation-delay: 900ms;
+  animation-fill-mode: forwards;
 }
 
 @keyframes open {
