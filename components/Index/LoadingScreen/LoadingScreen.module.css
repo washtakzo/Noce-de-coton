@@ -1,17 +1,10 @@
-.open-animation:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: white;
+.open-animation {
   transition: all 1600ms ease 2s;
-  animation: 1600ms ease 2s opensite;
+  animation: 1600ms ease 2s opening;
   animation-fill-mode: forwards;
 }
 
-@keyframes opensite {
+@keyframes opening {
   0% {
     transform: rotateY(0deg);
   }
