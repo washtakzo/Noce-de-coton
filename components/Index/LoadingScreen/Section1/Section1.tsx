@@ -2,6 +2,7 @@ import React from "react";
 
 import styles from "./Section1.module.css";
 import Image from "next/image";
+import { getWindowEffectTranslateY } from "../../../../utils/functions";
 
 const img1 =
   "https://static.wixstatic.com/media/c49135_fe230beccf0a4b6fbba1941e2660ff99~mv2.png/v1/fill/w_930,h_973,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/c49135_fe230beccf0a4b6fbba1941e2660ff99~mv2.png";
@@ -9,71 +10,20 @@ const img1 =
 const Section1 = () => {
   React.useEffect(() => {
     const imgEl = document.getElementById("image")! as HTMLImageElement;
+
     const imgContainerEl = document.getElementById(
       "image-container"
     )! as HTMLImageElement;
 
-    const intersectionObserver = new IntersectionObserver((entries, _) => {
-      entries.forEach((entry) => {
-        if (entry.intersectionRatio > 0) {
-          (entry.target as HTMLElement).addEventListener("scroll", () => {
-            const scrollY = window.scrollY;
-            console.log(scrollY);
-          });
+    window.addEventListener("scroll", () => {
+      const translateYY = getWindowEffectTranslateY(
+        imgContainerEl,
+        imgEl,
+        window.innerHeight
+      );
 
-          window.addEventListener("scroll", () => {
-            if (entry.intersectionRatio > 0) {
-              //--------------------------------------
-
-              //Scroll Y in document (px) : window.scrollY  //référence = top of the window
-
-              //Element Coord Y (px) : element.getBoundingClientRect().y
-              //Par rapport a la fenetre non pas tout le document
-              // = 0 lorsque le top de element aligné au top de la window
-
-              //Element Height (px) : element.offsetHeight  //fix
-              //Window Height (px) : window.innerHeight   //fix
-
-              // TODO:récupérer la position de l'image en pourcentage par rapport au top de la window
-              const imgContainerHeight = imgContainerEl.offsetHeight;
-
-              const imageHeight = imgEl.offsetHeight;
-
-              const containerPosition =
-                // imgContainerEl.getBoundingClientRect().y;  //save
-                imgContainerEl.getBoundingClientRect().y + imgContainerHeight;
-
-              // let containerPositionPrCent = 100 - (containerPosition * 100) / window.innerHeight;  //save
-              let containerPositionPrCent =
-                100 -
-                (containerPosition * 100) /
-                  (window.innerHeight + imgContainerHeight);
-
-              if (containerPositionPrCent < 0) containerPositionPrCent = 0;
-              if (containerPositionPrCent > 100) containerPositionPrCent = 100;
-              console.log({ containerPosition });
-
-              const maxTranslateY =
-                100 - (imgContainerHeight * 100) / imageHeight;
-
-              let translateYY = (maxTranslateY * containerPositionPrCent) / 100;
-
-              if (translateYY > maxTranslateY) translateYY = maxTranslateY;
-
-              console.log({ containerPositionPrCent });
-
-              (
-                entry.target as HTMLElement
-              ).style.transform = `translateY(${translateYY}%)`;
-            }
-          });
-        }
-
-        //style = "transform: translate3d(0px, 15.8296px, 0px)";
-      });
+      (imgEl as HTMLElement).style.transform = `translateY(${translateYY}%)`;
     });
-
-    intersectionObserver.observe(imgEl);
   }, []);
 
   return (
