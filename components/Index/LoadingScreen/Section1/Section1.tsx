@@ -3,9 +3,16 @@ import React from "react";
 import styles from "./Section1.module.css";
 import Image from "next/image";
 import { getWindowEffectTranslateY } from "../../../../utils/functions";
+import LittleDivider from "../../../UI/LittleDivider/LittleDivider";
+import H2 from "../../../UI/H2/H2";
+import H3 from "../../../UI/H3/H3";
+import P from "../../../UI/P/P";
+import A from "../../../UI/Anchor/Anchor";
 
 const img1 =
   "https://static.wixstatic.com/media/c49135_fe230beccf0a4b6fbba1941e2660ff99~mv2.png/v1/fill/w_930,h_973,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/c49135_fe230beccf0a4b6fbba1941e2660ff99~mv2.png";
+
+const img2 = "https://wallpapers.com/images/hd/anime-city-43g4mfdzm6c5jzb8.jpg";
 
 const Section1 = () => {
   React.useEffect(() => {
@@ -27,32 +34,28 @@ const Section1 = () => {
   }, []);
 
   return (
-    <section className="h-[480px] w-full bg-slate-50 flex justify-center items-center">
+    <section className="h-[620px] w-full bg-white flex justify-center items-center flex-col gap-8 lg:flex-row lg:h-[420px] xl:h-[600px]">
       <div className="flex flex-col flex-1 justify-center items-center gap-6">
         <div className="flex justify-center items-center flex-col gap-2">
-          <h2 className="text-[1.5rem] font-serif uppercase">
-            <span className="text-[3rem]">Q</span>ui sommes-nous ?
-          </h2>
-          <span className="w-[15%] h-[1px] bg-slate-800" />
-          <h3 className="text-xl font-normal font-serif">
-            Ensemble, créons lunique
-          </h3>
+          <H2>Qui sommes-nous</H2>
+          <LittleDivider />
+          <H3>Ensemble, créons lunique</H3>
         </div>
-        <p className="w-[50%]">
+        <P>
           AS Luxury est une agence événementielle de prestige spécialisée dans
           la production dévénements et de mariages extraordinaires, la
           scénographie et la décoration florale, en France et dans le monde
           entier.
-        </p>
-        <a href="">En savoir plus</a>
+        </P>
+        <A drawingIsDisplay={true}>En savoir plus</A>
       </div>
       <div
         id="image-container"
-        className="relative flex-1 h-full bg-green-100 overflow-hidden"
+        className="relative flex-1 h-full min-h-[200px] w-full overflow-hidden"
       >
         <img
           id="image"
-          className="object-contain absolute bottom-0 left-0 w-full bg-blue-300 scale-[1]"
+          className="object-contain absolute bottom-0 left-0 w-full"
           src={img1}
           alt="illustration mariage"
         />

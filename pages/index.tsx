@@ -3,60 +3,12 @@ import Head from "next/head";
 import LoadingScreen from "../components/Index/LoadingScreen/LoadingScreen";
 import Image from "next/image";
 import Section1 from "../components/Index/LoadingScreen/Section1/Section1";
+import Header from "../components/Shared/Header/Header";
+import SectionVideo from "../components/Index/SectionVideo/SectionVideo";
+import SectionDivider from "../components/UI/SectionDivider/SectionDivider";
+import SectionServices from "../components/Index/SectionServices/SectionServices";
 
 export default function Home() {
-  // const titleRef = React.useRef<HTMLElement>(null);
-
-  // React.useEffect(() => {
-  //   // const titre = document.getElementById("image")! as HTMLTitleElement;
-
-  //   const intersectionObserver = new IntersectionObserver((entries, _) => {
-  //     entries.forEach((entry) => {
-  //       if (entry.intersectionRatio > 0) {
-  //         // (entry.target as HTMLElement).style.transform = "rotate(90deg)";
-  //         // (entry.target as HTMLElement).addEventListener("scroll", () => {
-  //         //   const scrollY = window.scrollY;
-  //         //   console.log(scrollY);
-  //         // });
-
-  //         window.addEventListener("scroll", () => {
-  //           if (entry.intersectionRatio > 0) {
-  //             //--------------------------------------
-
-  //             //Scroll Y in document (px) : window.scrollY  //référence = top of the window
-
-  //             //Element Coord Y (px) : element.getBoundingClientRect().y
-  //             //Par rapport a la fenetre non pas tout le document
-  //             // = 0 lorsque le top de element aligné au top de la window
-
-  //             //Element Height (px) : element.offsetHeight  //fix
-  //             //Window Height (px) : window.innerHeight   //fix
-
-  //             const showCoord =
-  //               window.innerHeight - titre.getBoundingClientRect().y;
-  //             console.log({ showCoord });
-
-  //             let translateY = 0;
-  //             if (showCoord > 0) {
-  //               translateY = showCoord / 4;
-  //             }
-
-  //             //--------------------------------------
-
-  //             // (
-  //             //   entry.target as HTMLElement
-  //             // ).style.transform = `translateY(-${translateY}px)`;
-  //           }
-  //         });
-  //       }
-
-  //       //style = "transform: translate3d(0px, 15.8296px, 0px)";
-  //     });
-  //   });
-
-  //   intersectionObserver.observe(titre);
-  // }, []);
-
   return (
     <>
       <div>
@@ -66,50 +18,17 @@ export default function Home() {
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        {/* <LoadingScreen /> */}
+        <LoadingScreen />
+
+        <Header />
 
         <main>
-          <div className="relative bg-red-100">
-            <video
-              width="1920"
-              height="1080"
-              autoPlay
-              muted
-              loop
-              preload="auto"
-            >
-              <source src="assets/videos/wedding.mp4" type="video/mp4" />
-              Video not supported
-            </video>
-            <h1 className="absolute top-0 bottom-0 left-0 right-0 flex justify-center items-center text-[60px] text-white font-serif">
-              Noce de coton
-            </h1>
-          </div>
-          <div className="h-screen w-full bg-slate-50" />
+          <SectionVideo />
+          <SectionDivider />
           <Section1 />
-          {/* <section className="flex h-[800px] p-4">
-          <div className="bg-red-50 w-[50%]">
-            <h2 id="titre" className="inline-block">
-              Bienvenue
-            </h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Temporibus dolorem sit molestias.
-            </p>
-          </div>
-          <div className=" bg-transparent w-[50%] flex justify-center items-center border-red-600 border-2">
-            <div className="relative w-[100%] h-[1600px] border-green-600 border-2">
-              <Image
-                src="/../public/assets/images/__illustration1.jpg"
-                alt="illustration"
-                fill
-                className="h-[100%] border-blue-600 border-2 object-cover"
-                id="image"
-              />
-            </div>
-          </div>
-        </section> */}
-          <div className="h-screen w-full bg-slate-50" />
+          <SectionDivider />
+          <SectionServices />
+          <div className="h-screen w-full bg-white" />
         </main>
 
         <footer></footer>
