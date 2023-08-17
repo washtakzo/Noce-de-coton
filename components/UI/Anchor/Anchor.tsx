@@ -1,10 +1,17 @@
 import React from "react";
 
-type Props = { children: string; href?: string; drawingIsDisplay: boolean };
+type Props = {
+  children: string;
+  href?: string;
+  drawingIsDisplay: boolean;
+  className?: string;
+};
 
-const A = ({ children, href, drawingIsDisplay }: Props) => {
+const A = ({ children, href, drawingIsDisplay, className }: Props) => {
   return (
-    <div className="flex justify-between items-center w-[50%]">
+    <div
+      className={`flex justify-between items-center w-[50%] m-auto ${className}`}
+    >
       <a href={href} className="italic">
         {children}
       </a>

@@ -6,9 +6,9 @@ const H2 = ({ children }: Props) => {
   const [firstLetter, ...otherLetters] = children.split("");
 
   return (
-    <h2 className="text-[3rem] uppercase tracking-wide xl:text-[4rem] text-center">
+    <h2 className="text-[4rem] uppercase tracking-wide xl:text-[4rem] text-center">
       {firstLetter}
-      <span className="text-[1.4rem] xl:text-[2rem]">
+      <span className="text-[1.6rem] xl:text-[2rem]">
         {otherLetters.join("")}
       </span>
     </h2>
