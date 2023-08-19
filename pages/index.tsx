@@ -9,6 +9,7 @@ import SectionDivider from "../components/UI/SectionDivider/SectionDivider";
 import SectionServices from "../components/Index/SectionServices/SectionServices";
 import SectionTestimonies from "../components/Index/SectionTestimonies/SectionTestimonies";
 import SectionStayTuned from "../components/Index/SectionStayTuned/SectionStayTuned";
+import SectionSpacing from "../components/UI/SectionSpacing/SectionSpacing";
 
 export default function Home() {
   return (
@@ -26,9 +27,11 @@ export default function Home() {
           <SectionVideo />
           <SectionDivider />
           <SectionPresentation />
+          <SectionSpacing />
           <SectionServices />
           <SectionDivider />
           <SectionTestimonies />
+          <SectionSpacing />
           <SectionStayTuned />
           <div className="h-screen w-full bg-white" />
         </main>
