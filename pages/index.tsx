@@ -2,11 +2,13 @@ import React from "react";
 import Head from "next/head";
 import LoadingScreen from "../components/Index/LoadingScreen/LoadingScreen";
 import Image from "next/image";
-import Section1 from "../components/Index/LoadingScreen/Section1/Section1";
+import SectionPresentation from "../components/Index/SectionPresentation/SectionPresentation";
 import Header from "../components/Shared/Header/Header";
 import SectionVideo from "../components/Index/SectionVideo/SectionVideo";
 import SectionDivider from "../components/UI/SectionDivider/SectionDivider";
 import SectionServices from "../components/Index/SectionServices/SectionServices";
+import SectionTestimonies from "../components/Index/SectionTestimonies/SectionTestimonies";
+import SectionStayTuned from "../components/Index/SectionStayTuned/SectionStayTuned";
 
 export default function Home() {
   return (
@@ -20,14 +22,14 @@ export default function Home() {
 
         <LoadingScreen />
 
-        <Header />
-
-        <main>
+        <main className="bg-white">
           <SectionVideo />
           <SectionDivider />
-          <Section1 />
-          <SectionDivider />
+          <SectionPresentation />
           <SectionServices />
+          <SectionDivider />
+          <SectionTestimonies />
+          <SectionStayTuned />
           <div className="h-screen w-full bg-white" />
         </main>
 

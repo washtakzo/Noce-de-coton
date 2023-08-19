@@ -1,10 +1,11 @@
 import React from "react";
-import Section from "../../UI/Section/Section";
 import H2 from "../../UI/H2/H2";
 import LittleDivider from "../../UI/LittleDivider/LittleDivider";
 import H3 from "../../UI/H3/H3";
 import Image from "next/image";
 import A from "../../UI/Anchor/Anchor";
+import H4 from "../../UI/H4/H4";
+import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
 
 const ImageCardLink = ({ image, title }: { image: string; title: string }) => {
   return (
@@ -17,9 +18,7 @@ const ImageCardLink = ({ image, title }: { image: string; title: string }) => {
           className="object-cover"
         />
       </div>
-      <h4 className="text-center text-3xl uppercase w-[80%] m-auto md:text-2xl">
-        {title}
-      </h4>
+      <H4>{title}</H4>
       <A
         drawingIsDisplay={true}
         className="text-2xl w-[80%] md:text-lg md:w-full"
@@ -33,11 +32,10 @@ const ImageCardLink = ({ image, title }: { image: string; title: string }) => {
 const SectionServices = () => {
   return (
     <section className="w-[90%] m-auto">
-      <div className="flex flex-col justify-center items-center gap-4">
-        <H2>Nos services</H2>
-        <LittleDivider />
-        <H3>Racontez nous votre histoire, nous vous accompagnerons</H3>
-      </div>
+      <SectionTitle
+        title="Nos services"
+        subTitle="Racontez nous votre histoire, nous vous accompagnerons"
+      />
       <div className="w-full flex flex-col justify-center items-center gap-12 mt-8 md:flex-row md:justify-between md:mt-16">
         <ImageCardLink
           image="https://static.wixstatic.com/media/c49135_295ec1bddb134c4daeef909cdc26ea14~mv2.png/v1/fill/w_350,h_444,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/c49135_295ec1bddb134c4daeef909cdc26ea14~mv2.png"

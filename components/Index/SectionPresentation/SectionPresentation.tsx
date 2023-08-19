@@ -1,20 +1,17 @@
 import React from "react";
 
-import styles from "./Section1.module.css";
 import Image from "next/image";
-import { getWindowEffectTranslateY } from "../../../../utils/functions";
-import LittleDivider from "../../../UI/LittleDivider/LittleDivider";
-import H2 from "../../../UI/H2/H2";
-import H3 from "../../../UI/H3/H3";
-import P from "../../../UI/P/P";
-import A from "../../../UI/Anchor/Anchor";
+import { getWindowEffectTranslateY } from "../../../utils/functions";
+import P from "../../UI/P/P";
+import A from "../../UI/Anchor/Anchor";
+import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
 
 const img1 =
   "https://static.wixstatic.com/media/c49135_fe230beccf0a4b6fbba1941e2660ff99~mv2.png/v1/fill/w_930,h_973,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/c49135_fe230beccf0a4b6fbba1941e2660ff99~mv2.png";
 
 const img2 = "https://wallpapers.com/images/hd/anime-city-43g4mfdzm6c5jzb8.jpg";
 
-const Section1 = () => {
+const SectionOurStory = () => {
   React.useEffect(() => {
     const imgEl = document.getElementById("image")! as HTMLImageElement;
 
@@ -36,11 +33,10 @@ const Section1 = () => {
   return (
     <section className="h-[620px] w-full bg-white flex justify-center items-center flex-col gap-8 lg:flex-row lg:h-[420px] xl:h-[600px]">
       <div className="flex flex-col flex-1 justify-center items-center gap-6">
-        <div className="flex justify-center items-center flex-col gap-2">
-          <H2>Qui sommes-nous</H2>
-          <LittleDivider />
-          <H3>Ensemble, créons lunique</H3>
-        </div>
+        <SectionTitle
+          title="Qui sommes-nous"
+          subTitle="Ensemble, créons lunique"
+        />
         <P>
           AS Luxury est une agence événementielle de prestige spécialisée dans
           la production dévénements et de mariages extraordinaires, la
@@ -64,4 +60,4 @@ const Section1 = () => {
   );
 };
 
-export default Section1;
+export default SectionOurStory;
